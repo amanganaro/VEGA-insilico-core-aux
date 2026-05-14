@@ -2,6 +2,8 @@ package insilico.core.pmml;
 
 import insilico.core.exception.InitFailureException;
 import insilico.core.localization.StringSelectorCore;
+import lombok.Getter;
+import lombok.Setter;
 import org.dmg.pmml.FieldName;
 import org.dmg.pmml.PMML;
 import org.jpmml.evaluator.*;
@@ -24,6 +26,8 @@ import static org.jpmml.model.PMMLUtil.unmarshal;
 public class ModelGenericFromPMML {
 
     private final Evaluator evaluator;
+    @Getter
+    @Setter
     protected boolean verbose;
 
 
@@ -81,22 +85,6 @@ public class ModelGenericFromPMML {
 
         // Retrieve result
         return outputs;
-    }
-
-
-    /**
-     * @return the verbose
-     */
-    public boolean isVerbose() {
-        return verbose;
-    }
-
-
-    /**
-     * @param verbose the verbose to set
-     */
-    public void setVerbose(boolean verbose) {
-        this.verbose = verbose;
     }
 
 }
